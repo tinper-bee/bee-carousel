@@ -1,0 +1,72 @@
+
+import { Con, Row, Col } from 'bee-layout';
+import { Panel } from 'bee-panel';
+import Button from 'bee-button';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import ReactSwiper from '../src';
+
+
+const CARET = <i className="uf uf-arrow-down"></i>;
+
+const CARETUP = <i className="uf uf-arrow-up"></i>;
+
+
+var Demo1 = require("./demolist/Demo1");var Demo2 = require("./demolist/Demo2");var Demo3 = require("./demolist/Demo3");var Demo4 = require("./demolist/Demo4");var Demo5 = require("./demolist/Demo5");var DemoArray = [{"example":<Demo1 />,"title":" 基础轮播","code":"/**\n *\n * @title 基础轮播\n * @description 可定制页码\n *\n */\nimport React from 'react';\nimport ReactSwiper from 'bee-react-swiper';\n\nclass Demo1 extends React.Component {\n  render() {\n    const params = {\n      pagination: {\n        el: '.swiper-pagination',\n        clickable: true,\n         renderBullet: function (index, className) {\n\t        return '<span class=\"' + className + '\">' + (index + 1) + '</span>';\n\t      },\n        \n      },\n      navigation: {\n        nextEl: '.swiper-button-next',\n        prevEl: '.swiper-button-prev'\n      },\n      spaceBetween: 30\n    }\n\n    return(\n    \t<div id=\"customized-pagination\">\n    \t\t<ReactSwiper {...params}>\n\t        <div>Slide 1</div>\n\t        <div>Slide 2</div>\n\t        <div>Slide 3</div>\n\t        <div>Slide 4</div>\n\t        <div>Slide 5</div>\n      \t</ReactSwiper>\n    \t</div>\n      \n    )\n  }\n}\n\n","desc":" 可定制页码"},{"example":<Demo2 />,"title":" 旋转轮播","code":"/**\n *\n * @title 旋转轮播\n * @description 切换动画是3d翻转形式\n *\n */\nimport React from 'react';\nimport ReactSwiper from 'bee-react-swiper';\n\nclass Demo2 extends React.Component {\n  render() {\n    const params = {\n      pagination: {\n        el: '.swiper-pagination',\n        type: 'bullets',\n        clickable: true\n      },\n      navigation: {\n        nextEl: '.swiper-button-next',\n        prevEl: '.swiper-button-prev'\n      },\n      spaceBetween: 30,\n      effect: 'flip',\n      grabCursor: true,\n    }\n\n    return(\n      <ReactSwiper {...params}>\n        <div>Slide 1</div>\n        <div>Slide 2</div>\n        <div>Slide 3</div>\n        <div>Slide 4</div>\n        <div>Slide 5</div>\n      </ReactSwiper>\n    )\n  }\n}\n\n","desc":" 切换动画是3d翻转形式"},{"example":<Demo3 />,"title":" 进度条轮播","code":"\n/**\n *\n * @title 进度条轮播\n * @description 切换进度可在上边1️以进度条的形式展现\n *\n */\nimport React from 'react';\nimport ReactSwiper from 'bee-react-swiper';\n\nclass Demo3 extends React.Component {\n  render() {\n    const params = {\n      pagination: {\n        el: '.swiper-pagination',\n        type: 'progressbar',\n      },\n      navigation: {\n        nextEl: '.swiper-button-next',\n        prevEl: '.swiper-button-prev'\n      }\n    }\n\n    return(\n      <ReactSwiper {...params}>\n        <div>Slide 1</div>\n        <div>Slide 2</div>\n        <div>Slide 3</div>\n        <div>Slide 4</div>\n        <div>Slide 5</div>\n      </ReactSwiper>\n    )\n  }\n}\n\n","desc":" 切换进度可在上边1️以进度条的形式展现"},{"example":<Demo4 />,"title":" 触摸轮播","code":"\n/**\n *\n * @title 触摸轮播\n * @description 触发方式多用于手机端\n *\n */\nimport React from 'react';\nimport ReactSwiper from 'bee-react-swiper';\n\nclass Demo4 extends React.Component {\n  render() {\n    const params = {\n      pagination: {\n        el: '.swiper-pagination',\n        clickable: true,\n      },\n      spaceBetween: 30\n    }\n\n    return(\n      <ReactSwiper {...params}>\n        <div>Slide 1</div>\n        <div>Slide 2</div>\n        <div>Slide 3</div>\n        <div>Slide 4</div>\n        <div>Slide 5</div>\n      </ReactSwiper>\n    )\n  }\n}\n\n","desc":" 触发方式多用于手机端"},{"example":<Demo5 />,"title":" 响应式轮播","code":"\n/**\n *\n * @title 响应式轮播\n * @description 根据滑动的力度，定位轮播当前active的进度\n *\n */\nimport React from 'react';\nimport ReactSwiper from 'bee-react-swiper';\n\nclass Demo5 extends React.Component {\n  render() {\n    const params = {\n      pagination: {\n        el: '.swiper-pagination',\n        clickable: true,\n      },\n      slidesPerView: 5,\n      spaceBetween: 50,\n      breakpoints: {\n        1024: {\n          slidesPerView: 4,\n          spaceBetween: 40\n        },\n        768: {\n          slidesPerView: 3,\n          spaceBetween: 30\n        },\n        640: {\n          slidesPerView: 2,\n          spaceBetween: 20\n        },\n        320: {\n          slidesPerView: 1,\n          spaceBetween: 10\n        }\n      }\n    }\n\n    return(\n      <ReactSwiper {...params}>\n        <div>Slide 1</div>\n        <div>Slide 2</div>\n        <div>Slide 3</div>\n        <div>Slide 4</div>\n        <div>Slide 5</div>\n        <div>Slide 6</div>\n        <div>Slide 7</div>\n        <div>Slide 8</div>\n        <div>Slide 9</div>\n        <div>Slide 10</div>\n      </ReactSwiper>\n    )\n  }\n}\n\n","desc":" 根据滑动的力度，定位轮播当前active的进度"}]
+
+
+class Demo extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            open: false
+        }
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
+        this.setState({ open: !this.state.open })
+    }
+
+    render () {
+        const { title, example, code, desc  } = this.props;
+        let caret = this.state.open ? CARETUP : CARET;
+        let text = this.state.open ? "隐藏代码" : "查看代码";
+
+        const footer = (
+            <Button shape="block" onClick={ this.handleClick }>
+                { caret }
+                { text }
+            </Button>
+        );
+        return (
+            <Col md={12} >
+                <h3>{ title }</h3>
+                <p>{ desc }</p>
+                <Panel collapsible headerContent expanded={ this.state.open } colors='bordered' header={ example } footer={footer} footerStyle = {{padding: 0}}>
+                    <pre><code className="hljs javascript">{ code }</code></pre>
+                </Panel>
+            </Col>
+        )
+    }
+}
+
+class DemoGroup extends Component {
+    constructor(props){
+        super(props)
+    }
+    render () {
+        return (
+                <Row>
+                    {DemoArray.map((child,index) => {
+
+                        return (
+                            <Demo example= {child.example} title= {child.title} code= {child.code} desc= {child.desc} key= {index}/>
+                        )
+
+                    })}
+                </Row>
+        )
+    }
+}
+
+ReactDOM.render(<DemoGroup/>, document.getElementById('tinperBeeDemo'));
