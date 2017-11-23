@@ -11,7 +11,7 @@
 
 react bee-react-swiper component for tinper-bee
 
-some description...
+Swiper 可自定义手动点击滑动和左右滑动，可兼容移动端。基于swiper.js开发.继承swiper.js的所有方法和属性。
 
 ## 依赖
 
@@ -22,6 +22,34 @@ some description...
 ## 使用方法
 
 ```js
+import React from 'react';
+import ReactSwiper from '../../src';
+
+class Demo1 extends React.Component {
+  render() {
+    const params = {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      spaceBetween: 30
+    }
+
+    return(
+      <ReactSwiper {...params}>
+        <div>Slide 1</div>
+        <div>Slide 2</div>
+        <div>Slide 3</div>
+        <div>Slide 4</div>
+        <div>Slide 5</div>
+      </ReactSwiper>
+    )
+  }
+}
+
+export default Demo1;
+
+ReactDOM.render(Demo1, document.getElementById('target'));
 
 ```
 
@@ -29,8 +57,19 @@ some description...
 
 ## API
 
-|参数|说明|类型|默认值|
-|:--|:---:|:--:|---:|
+|参数|类型|默认值|说明|
+|:--|:---:|:--:|:---:|
+|containerClass|String|swiper-container|	Swiper 容器 class name|
+|wrapperClass|String|swiper-wrapper|	Swiper 父元素 class name|
+|slideClass|String|	swiper-slide|	Swiper 单个元素 class name|
+|prevButtonCustomizedClass|String|''|	Swiper 前一个按钮 class name|
+|nextButtonCustomizedClass|String|''|	Swiper 下一个按钮 class name|
+|paginationCustomizedClass|String|''|	Swiper 页码 class name|
+|shouldSwiperUpdate|Boolea|false|当元素发生变是否更新swiper|
+|rebuildOnUpdate|Boolean|false|当元素更新是否重新渲染swiper|
+|noSwiping|Boolean|false|根据条件是否禁用滑动|
+|activeSlideKey|String or Number|''|定义最初的激活态slide|
+你也可以直接用swiper.js的原始参数 [HERE](http://idangero.us/swiper/api/)api/
 
 #### 开发调试
 
