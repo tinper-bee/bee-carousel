@@ -13,7 +13,7 @@ class Demo3 extends React.Component {
     const params = {
       pagination: {
         el: '.swiper-pagination',
-        type: 'progressbar',
+        type: 'progressbar',  //将页码改成进度条形式
       },
       navigation: {
         nextEl: '.swiper-button-next',

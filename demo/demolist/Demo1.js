@@ -2,7 +2,6 @@
  *
  * @title 基础轮播
  * @description 可定制页码
- *
  */
 import React from 'react';
 import ReactSwiper from '../../src';
@@ -10,19 +9,19 @@ import ReactSwiper from '../../src';
 class Demo1 extends React.Component {
   render() {
     const params = {
-      pagination: {
+      pagination: {   //配置页码参数 其中 renderBullet 是自定义页码
         el: '.swiper-pagination',
-        clickable: true,
+        clickable: true,  //可点击页码切换swiper
          renderBullet: function (index, className) {
 	        return '<span class="' + className + '">' + (index + 1) + '</span>';
 	      },
         
       },
-      navigation: {
+      navigation: {   //配置上一页下一页按钮
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       },
-      spaceBetween: 30
+      spaceBetween: 20  //配置两页之前切换距离
     }
 
     return(

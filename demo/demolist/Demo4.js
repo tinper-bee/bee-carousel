@@ -2,7 +2,7 @@
 /**
  *
  * @title 触摸轮播
- * @description 触发方式多用于手机端
+ * @description 触发方式多用于手机端 最简单的触摸模式
  *
  */
 import React from 'react';
@@ -13,7 +13,6 @@ class Demo4 extends React.Component {
     const params = {
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
       },
       spaceBetween: 30
     }

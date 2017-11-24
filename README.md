@@ -69,7 +69,7 @@ ReactDOM.render(Demo1, document.getElementById('target'));
 |rebuildOnUpdate|Boolean|false|当元素更新是否重新渲染swiper|
 |noSwiping|Boolean|false|根据条件是否禁用滑动|
 |activeSlideKey|String or Number|''|定义最初的激活态slide|
-你也可以直接用swiper.js的原始参数 [HERE](http://idangero.us/swiper/api/)api/
+你也可以直接用swiper.js的原始参数 [这里](http://idangero.us/swiper/api/)api/
 
 #### 开发调试
 

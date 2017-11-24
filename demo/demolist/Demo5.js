@@ -3,7 +3,6 @@
  *
  * @title 响应式轮播
  * @description 根据滑动的力度，定位轮播当前active的进度
- *
  */
 import React from 'react';
 import ReactSwiper from '../../src';
@@ -15,9 +14,9 @@ class Demo5 extends React.Component {
         el: '.swiper-pagination',
         clickable: true,
       },
-      slidesPerView: 5,
+      slidesPerView: 5,  //单屏显示几个slider
       spaceBetween: 50,
-      breakpoints: {
+      breakpoints: {  //设置不同尺寸下 单屏显示几个slider 
         1024: {
           slidesPerView: 4,
           spaceBetween: 40

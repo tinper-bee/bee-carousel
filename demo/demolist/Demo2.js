@@ -20,8 +20,7 @@ class Demo2 extends React.Component {
         prevEl: '.swiper-button-prev'
       },
       spaceBetween: 30,
-      effect: 'flip',
-      grabCursor: true,
+      effect: 'flip' //设置3d翻转
     }
 
     return(
