@@ -57,7 +57,7 @@ ReactDOM.render(Demo1, document.getElementById('target'));
 
 ## API
 
-|参数|类型|默认值|说明|
+|参数|说明|类型|默认值|
 |:--|:---:|:--:|:---:|
 |containerClass|Carousel 容器 class name|String|swiper-container|
 |wrapperClass|Carousel 父元素 class name|String|swiper-wrapper|
