@@ -1,6 +1,6 @@
 {
- "name": "bee-carousels",
- "version": "0.0.2",
+ "name": "bee-carousel",
+ "version": "1.0.0",
  "description": "Swiper ui component for react",
  "keywords": [
   "react",
