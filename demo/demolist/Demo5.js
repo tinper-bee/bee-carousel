@@ -37,18 +37,20 @@ class Demo5 extends React.Component {
     }
 
     return(
-      <ReactSwiper {...params}>
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-        <div>Slide 3</div>
-        <div>Slide 4</div>
-        <div>Slide 5</div>
-        <div>Slide 6</div>
-        <div>Slide 7</div>
-        <div>Slide 8</div>
-        <div>Slide 9</div>
-        <div>Slide 10</div>
-      </ReactSwiper>
+        <div className="swiper-demo-five">
+            <ReactSwiper {...params}>
+                <div className="swiper-demo-1"></div>
+                <div className="swiper-demo-2"></div>
+                <div className="swiper-demo-3"></div>
+                <div className="swiper-demo-4"></div>
+                <div className="swiper-demo-5"></div>
+                <div className="swiper-demo-1"></div>
+                <div className="swiper-demo-2"></div>
+                <div className="swiper-demo-3"></div>
+                <div className="swiper-demo-4"></div>
+                <div className="swiper-demo-5"></div>
+            </ReactSwiper>
+        </div>
     )
   }
 }

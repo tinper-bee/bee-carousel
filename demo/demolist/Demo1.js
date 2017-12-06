@@ -27,11 +27,11 @@ class Demo1 extends React.Component {
     return(
     	<div id="customized-pagination">
     		<ReactSwiper {...params}>
-	        <div>Slide 1</div>
-	        <div>Slide 2</div>
-	        <div>Slide 3</div>
-	        <div>Slide 4</div>
-	        <div>Slide 5</div>
+	        <div className="swiper-demo-1"></div>
+	        <div className="swiper-demo-2"></div>
+	        <div className="swiper-demo-3"></div>
+	        <div className="swiper-demo-4"></div>
+	        <div className="swiper-demo-5"></div>
       	</ReactSwiper>
     	</div>
       

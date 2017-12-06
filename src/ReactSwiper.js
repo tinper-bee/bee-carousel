@@ -1,25 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Swiper from 'swiper/dist/js/swiper.js';
-import objectAssign from 'object-assign';
+
 import PropTypes from 'prop-types';
 
-export default class ReactSwiper extends React.Component {
-  // Default props
-  static defaultProps = {
+const defaultProps = {
     containerClass: 'swiper-container',
     wrapperClass: 'swiper-wrapper',
     slideClass: 'swiper-slide'
-  }
+};
 
-  // Proptypes
-  static propTypes = {
+const propTypes = {
     // react-id-swiper original parameter
     containerClass: PropTypes.string,
     wrapperClass: PropTypes.string,
     children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.element
+        PropTypes.node,
+        PropTypes.element
     ]),
     rebuildOnUpdate: PropTypes.bool,
     shouldSwiperUpdate: PropTypes.bool,
@@ -28,14 +25,14 @@ export default class ReactSwiper extends React.Component {
     paginationCustomizedClass: PropTypes.string,
     scrollbarCustomizedClass: PropTypes.string,
     activeSlideKey: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
+        PropTypes.string,
+        PropTypes.number
     ]),
     // parallax
     parallax: PropTypes.bool,
     parallaxEl: PropTypes.shape({
-      el: PropTypes.string,
-      value: PropTypes.string
+        el: PropTypes.string,
+        value: PropTypes.string
     }),
 
     // swiper parameter
@@ -148,77 +145,77 @@ export default class ReactSwiper extends React.Component {
 
     // autoplay
     autoplay: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        delay: PropTypes.number,
-        stopOnLast: PropTypes.bool,
-        disableOnInteraction: PropTypes.bool,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            delay: PropTypes.number,
+            stopOnLast: PropTypes.bool,
+            disableOnInteraction: PropTypes.bool,
+        })
     ]),
 
     // pagination
     pagination: PropTypes.shape({
-      el: PropTypes.string,
-      type: PropTypes.string,
-      bulletElement: PropTypes.string,
-      dynamicBullets: PropTypes.bool,
-      hideOnClick: PropTypes.bool,
-      clickable: PropTypes.bool,
-      renderBullet: PropTypes.func,
-      renderFraction: PropTypes.func,
-      renderProgressbar: PropTypes.func,
-      renderCustom: PropTypes.func,
-      bulletClass: PropTypes.string,
-      bulletActiveClass: PropTypes.string,
-      modifierClass: PropTypes.string,
-      currentClass: PropTypes.string,
-      totalClass: PropTypes.string,
-      hiddenClass: PropTypes.string,
-      progressbarFillClass: PropTypes.string,
-      clickableClass: PropTypes.string,
+        el: PropTypes.string,
+        type: PropTypes.string,
+        bulletElement: PropTypes.string,
+        dynamicBullets: PropTypes.bool,
+        hideOnClick: PropTypes.bool,
+        clickable: PropTypes.bool,
+        renderBullet: PropTypes.func,
+        renderFraction: PropTypes.func,
+        renderProgressbar: PropTypes.func,
+        renderCustom: PropTypes.func,
+        bulletClass: PropTypes.string,
+        bulletActiveClass: PropTypes.string,
+        modifierClass: PropTypes.string,
+        currentClass: PropTypes.string,
+        totalClass: PropTypes.string,
+        hiddenClass: PropTypes.string,
+        progressbarFillClass: PropTypes.string,
+        clickableClass: PropTypes.string,
     }),
 
     // scrollbar
     scrollbar: PropTypes.shape({
-      el: PropTypes.any,
-      hide: PropTypes.bool,
-      draggable: PropTypes.bool,
-      snapOnRelease: PropTypes.bool,
-      dragSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        el: PropTypes.any,
+        hide: PropTypes.bool,
+        draggable: PropTypes.bool,
+        snapOnRelease: PropTypes.bool,
+        dragSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     }),
 
     // navigation
     navigation: PropTypes.shape({
-      nextEl: PropTypes.string,
-      prevEl: PropTypes.string,
-      hideOnClick: PropTypes.bool,
-      disabledClass: PropTypes.string,
-      hiddenClass: PropTypes.string,
+        nextEl: PropTypes.string,
+        prevEl: PropTypes.string,
+        hideOnClick: PropTypes.bool,
+        disabledClass: PropTypes.string,
+        hiddenClass: PropTypes.string,
     }),
 
     // a11y
     a11y: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        prevSlideMessage: PropTypes.string,
-        nextSlideMessage: PropTypes.string,
-        firstSlideMessage: PropTypes.string,
-        lastSlideMessage: PropTypes.string,
-        paginationBulletMessage: PropTypes.string,
-        notificationClass: PropTypes.string,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            prevSlideMessage: PropTypes.string,
+            nextSlideMessage: PropTypes.string,
+            firstSlideMessage: PropTypes.string,
+            lastSlideMessage: PropTypes.string,
+            paginationBulletMessage: PropTypes.string,
+            notificationClass: PropTypes.string,
+        })
     ]),
 
     // zoom
     zoom: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        maxRatio: PropTypes.number,
-        minRatio: PropTypes.number,
-        toggle: PropTypes.bool,
-        containerClass: PropTypes.string,
-        zoomedSlideClass: PropTypes.string,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            maxRatio: PropTypes.number,
+            minRatio: PropTypes.number,
+            toggle: PropTypes.bool,
+            containerClass: PropTypes.string,
+            zoomedSlideClass: PropTypes.string,
+        })
     ]),
 
     // keyboard
@@ -226,131 +223,133 @@ export default class ReactSwiper extends React.Component {
 
     // mousewheel
     mousewheel: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        forceToAxis: PropTypes.bool,
-        releaseOnEdges: PropTypes.bool,
-        invert: PropTypes.bool,
-        sensitivity: PropTypes.number,
-        eventsTarged: PropTypes.string,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            forceToAxis: PropTypes.bool,
+            releaseOnEdges: PropTypes.bool,
+            invert: PropTypes.bool,
+            sensitivity: PropTypes.number,
+            eventsTarged: PropTypes.string,
+        })
     ]),
 
     // hashNavigation
     hashNavigation: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        watchState: PropTypes.bool,
-        replaceState: PropTypes.bool,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            watchState: PropTypes.bool,
+            replaceState: PropTypes.bool,
+        })
     ]),
 
     // history
     history: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        key: PropTypes.string,
-        replaceState: PropTypes.bool,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            key: PropTypes.string,
+            replaceState: PropTypes.bool,
+        })
     ]),
 
     // lazy
     lazy: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        loadPrevNext: PropTypes.bool,
-        loadPrevNextAmount: PropTypes.number,
-        loadOnTransitionStart: PropTypes.bool,
-        elementClass: PropTypes.string,
-        loadingClass: PropTypes.string,
-        loadedClass: PropTypes.string,
-        preloaderClass: PropTypes.string,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            loadPrevNext: PropTypes.bool,
+            loadPrevNextAmount: PropTypes.number,
+            loadOnTransitionStart: PropTypes.bool,
+            elementClass: PropTypes.string,
+            loadingClass: PropTypes.string,
+            loadedClass: PropTypes.string,
+            preloaderClass: PropTypes.string,
+        })
     ]),
 
     // fadeEffect
     fadeEffect: PropTypes.shape({
-      crossFade: PropTypes.bool
+        crossFade: PropTypes.bool
     }),
 
     // coverflowEffect
     coverflowEffect: PropTypes.shape({
-      slideShadows: PropTypes.bool,
-      rotate: PropTypes.number,
-      stretch: PropTypes.number,
-      depth: PropTypes.number,
-      modifier: PropTypes.number,
+        slideShadows: PropTypes.bool,
+        rotate: PropTypes.number,
+        stretch: PropTypes.number,
+        depth: PropTypes.number,
+        modifier: PropTypes.number,
     }),
 
     // flipEffect
     flipEffect: PropTypes.shape({
-      slideShadows: PropTypes.bool,
-      limitRotation: PropTypes.bool,
+        slideShadows: PropTypes.bool,
+        limitRotation: PropTypes.bool,
     }),
 
     // cubeEffect
     cubeEffect: PropTypes.shape({
-      slideShadows: PropTypes.bool,
-      shadow: PropTypes.bool,
-      shadowOffset: PropTypes.number,
-      shadowScale: PropTypes.number,
+        slideShadows: PropTypes.bool,
+        shadow: PropTypes.bool,
+        shadowOffset: PropTypes.number,
+        shadowScale: PropTypes.number,
     }),
 
     // controller
     controller: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        control: PropTypes.any,
-        inverse: PropTypes.bool,
-        by: PropTypes.string,
-      })
+        PropTypes.bool,
+        PropTypes.shape({
+            control: PropTypes.any,
+            inverse: PropTypes.bool,
+            by: PropTypes.string,
+        })
     ]),
 
     // events
     on: PropTypes.shape({
-      init: PropTypes.func,
-      beforeDestroy: PropTypes.func,
-      slideChange: PropTypes.func,
-      slideChangeTransitionStart: PropTypes.func,
-      slideChangeTransitionEnd: PropTypes.func,
-      slideNextTransitionStart: PropTypes.func,
-      slideNextTransitionEnd: PropTypes.func,
-      slidePrevTransitionStart: PropTypes.func,
-      slidePrevTransitionEnd: PropTypes.func,
-      transitionStart: PropTypes.func,
-      onTransitionEnd: PropTypes.func,
-      touchStart: PropTypes.func,
-      touchMove: PropTypes.func,
-      touchMoveOpposite: PropTypes.func,
-      sliderMove: PropTypes.func,
-      touchEnd: PropTypes.func,
-      click: PropTypes.func,
-      tap: PropTypes.func,
-      doubleTap: PropTypes.func,
-      imagesReady: PropTypes.func,
-      progress: PropTypes.func,
-      reachBeginning: PropTypes.func,
-      reachEnd: PropTypes.func,
-      fromEdge: PropTypes.func,
-      setTranslate: PropTypes.func,
-      setTransition: PropTypes.func,
-      resize: PropTypes.func,
+        init: PropTypes.func,
+        beforeDestroy: PropTypes.func,
+        slideChange: PropTypes.func,
+        slideChangeTransitionStart: PropTypes.func,
+        slideChangeTransitionEnd: PropTypes.func,
+        slideNextTransitionStart: PropTypes.func,
+        slideNextTransitionEnd: PropTypes.func,
+        slidePrevTransitionStart: PropTypes.func,
+        slidePrevTransitionEnd: PropTypes.func,
+        transitionStart: PropTypes.func,
+        onTransitionEnd: PropTypes.func,
+        touchStart: PropTypes.func,
+        touchMove: PropTypes.func,
+        touchMoveOpposite: PropTypes.func,
+        sliderMove: PropTypes.func,
+        touchEnd: PropTypes.func,
+        click: PropTypes.func,
+        tap: PropTypes.func,
+        doubleTap: PropTypes.func,
+        imagesReady: PropTypes.func,
+        progress: PropTypes.func,
+        reachBeginning: PropTypes.func,
+        reachEnd: PropTypes.func,
+        fromEdge: PropTypes.func,
+        setTranslate: PropTypes.func,
+        setTransition: PropTypes.func,
+        resize: PropTypes.func,
     })
-  }
+}
+
+class ReactSwiper extends React.Component {
 
   constructor(props) {
     super(props);
-    this.renderContent = this.renderContent.bind(this);
+
   }
 
   componentDidMount() {
-    this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+    this.swiper = new Swiper(ReactDOM.findDOMNode(this), {...this.props});
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.destroy(true, true);
-      this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, nextProps));
+      this.swiper = new Swiper(ReactDOM.findDOMNode(this), {...nextProps});
     }
   }
 
@@ -361,7 +360,7 @@ export default class ReactSwiper extends React.Component {
   componentDidUpdate() {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.destroy(true, true);
-      this.swiper = new Swiper(ReactDOM.findDOMNode(this), objectAssign({}, this.props));
+      this.swiper = new Swiper(ReactDOM.findDOMNode(this), {...this.props});
     } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.update();
 
@@ -395,12 +394,12 @@ export default class ReactSwiper extends React.Component {
     delete this.swiper;
   }
 
-  validateClass(className) {
+  validateClass = (className) => {
     if (typeof className !== 'string') return '';
     return className.replace(/\.|#/g, ' ').trim();
   }
 
-  renderScrollBar() {
+  renderScrollBar = () => {
     if (!this.props.scrollbar || !this.props.scrollbar.el) return false;
     const scrollbarCustomizedClass = this.validateClass(this.props.scrollbarCustomizedClass);
     const scrollbarClass = this.validateClass(this.props.scrollbar.el);
@@ -408,7 +407,7 @@ export default class ReactSwiper extends React.Component {
     return <div className={[scrollbarClass, scrollbarCustomizedClass].join(' ')} />;
   }
 
-  renderPagination() {
+  renderPagination = () => {
     if (!this.props.pagination || !this.props.pagination.el) return false;
     const paginationCustomizedClass = this.validateClass(this.props.paginationCustomizedClass);
     const paginationClass = this.validateClass(this.props.pagination.el);
@@ -416,7 +415,7 @@ export default class ReactSwiper extends React.Component {
     return <div className={[paginationClass, paginationCustomizedClass].join(' ')} />;
   }
 
-  renderNextButton() {
+  renderNextButton = () => {
     if (!this.props.navigation || !this.props.navigation.nextEl) return false;
     const nextButtonCustomizedClass = this.validateClass(this.props.nextButtonCustomizedClass);
     const nextButtonClass = this.validateClass(this.props.navigation.nextEl);
@@ -424,7 +423,7 @@ export default class ReactSwiper extends React.Component {
     return <div className={[nextButtonClass, nextButtonCustomizedClass].join(' ')} />;
   }
 
-  renderPrevButton() {
+  renderPrevButton = () => {
     if (!this.props.navigation || !this.props.navigation.prevEl) return false;
     const prevButtonCustomizedClass = this.validateClass(this.props.prevButtonCustomizedClass);
     const prevButtonClass = this.validateClass(this.props.navigation.prevEl);
@@ -432,14 +431,14 @@ export default class ReactSwiper extends React.Component {
     return <div className={[prevButtonClass, prevButtonCustomizedClass].join(' ')} />;
   }
 
-  renderParallax() {
+  renderParallax = () => {
     if (!this.props.parallax || !this.props.parallaxEl) return false;
 
     const parallaxBgClass = this.validateClass(this.props.parallaxEl.el);
     return <div className={parallaxBgClass} data-swiper-parallax={this.props.parallaxEl.value} />;
   }
 
-  renderContent(e) {
+  renderContent = (e) => {
     if (!e) return null;
 
     const { slideClass, noSwiping } = this.props;
@@ -470,3 +469,9 @@ export default class ReactSwiper extends React.Component {
     );
   }
 }
+
+ReactSwiper.defaultProps = defaultProps;
+
+ReactSwiper.propTypes = propTypes;
+
+export default ReactSwiper;
