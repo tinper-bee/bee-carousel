@@ -333,11 +333,11 @@ var propTypes = {
     })
 };
 
-var Swiper = function (_React$Component) {
-    _inherits(Swiper, _React$Component);
+var Carousel = function (_React$Component) {
+    _inherits(Carousel, _React$Component);
 
-    function Swiper(props) {
-        _classCallCheck(this, Swiper);
+    function Carousel(props) {
+        _classCallCheck(this, Carousel);
 
         var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
@@ -403,22 +403,22 @@ var Swiper = function (_React$Component) {
         return _this;
     }
 
-    Swiper.prototype.componentDidMount = function componentDidMount() {
+    Carousel.prototype.componentDidMount = function componentDidMount() {
         this.swiper = new _swiper2["default"](_reactDom2["default"].findDOMNode(this), _extends({}, this.props));
     };
 
-    Swiper.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    Carousel.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
         if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
             this.swiper.destroy(true, true);
-            this.swiper = new Swiper(_reactDom2["default"].findDOMNode(this), _extends({}, nextProps));
+            this.swiper = new _swiper2["default"](_reactDom2["default"].findDOMNode(this), _extends({}, nextProps));
         }
     };
 
-    Swiper.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
+    Carousel.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
         return nextProps.children !== this.props.children;
     };
 
-    Swiper.prototype.componentDidUpdate = function componentDidUpdate() {
+    Carousel.prototype.componentDidUpdate = function componentDidUpdate() {
         var _this2 = this;
 
         if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
@@ -452,12 +452,12 @@ var Swiper = function (_React$Component) {
         }
     };
 
-    Swiper.prototype.componentWillUnmount = function componentWillUnmount() {
+    Carousel.prototype.componentWillUnmount = function componentWillUnmount() {
         if (typeof this.swiper !== 'undefined') this.swiper.destroy(true, true);
         delete this.swiper;
     };
 
-    Swiper.prototype.render = function render() {
+    Carousel.prototype.render = function render() {
         var _props = this.props,
             containerClass = _props.containerClass,
             wrapperClass = _props.wrapperClass,
@@ -482,12 +482,12 @@ var Swiper = function (_React$Component) {
         );
     };
 
-    return Swiper;
+    return Carousel;
 }(_react2["default"].Component);
 
-Swiper.defaultProps = defaultProps;
+Carousel.defaultProps = defaultProps;
 
-Swiper.propTypes = propTypes;
+Carousel.propTypes = propTypes;
 
-exports["default"] = Swiper;
+exports["default"] = Carousel;
 module.exports = exports['default'];

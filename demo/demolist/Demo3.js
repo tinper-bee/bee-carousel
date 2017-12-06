@@ -6,7 +6,7 @@
  *
  */
 import React from 'react';
-import Swiper from '../../src';
+import Carousel from '../../src';
 
 class Demo3 extends React.Component {
   render() {
@@ -22,14 +22,14 @@ class Demo3 extends React.Component {
     }
 
     return(
-        <div className="swiper-demo-three">
-            <Swiper {...params}>
-                <div className="swiper-demo-1"></div>
-                <div className="swiper-demo-2"></div>
-                <div className="swiper-demo-3"></div>
-                <div className="swiper-demo-4"></div>
-                <div className="swiper-demo-5"></div>
-            </Swiper>
+        <div className="carousel-demo-three">
+            <Carousel {...params}>
+                <div className="carousel-demo-1"></div>
+                <div className="carousel-demo-2"></div>
+                <div className="carousel-demo-3"></div>
+                <div className="carousel-demo-4"></div>
+                <div className="carousel-demo-5"></div>
+            </Carousel>
         </div>
     )
   }

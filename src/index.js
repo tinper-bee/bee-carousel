@@ -1,2 +1,2 @@
-import Swiper from './Swiper';
-export default Swiper;
+import Carousel from './Carousel';
+export default Carousel;

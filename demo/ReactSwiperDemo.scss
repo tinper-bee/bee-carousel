@@ -1,5 +1,5 @@
 @import "../node_modules/tinper-bee-core/scss/index.scss";
-@import "../src/Swiper.scss";
+@import "../src/Carousel.scss";
 @import "../node_modules/bee-panel/src/Panel.scss";
 @import "../node_modules/bee-layout/src/Layout.scss";
 @import "../node_modules/bee-button/src/Button.scss";
@@ -9,33 +9,33 @@
   width: 640px;
   height: 360px;
 }
-.swiper-demo-two, .swiper-demo-three, .swiper-demo-four{
+.carousel-demo-two, .carousel-demo-three, .carousel-demo-four{
   width: 640px;
 }
-.swiper-demo-five{
+.carousel-demo-five{
   width: 100%;
 }
-.swiper-demo-1{
+.carousel-demo-1{
   height: 360px;
   background: url("http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-1-min.jpg")no-repeat;
   background-size: cover;
 }
-.swiper-demo-2{
+.carousel-demo-2{
   height: 360px;
   background: url("http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-2-min.jpg")no-repeat;
   background-size: cover;
 }
-.swiper-demo-3{
+.carousel-demo-3{
   height: 360px;
   background: url("http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-3-min.jpg")no-repeat;
   background-size: cover;
 }
-.swiper-demo-4{
+.carousel-demo-4{
   height: 360px;
   background: url("http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-4-min.jpg")no-repeat;
   background-size: cover;
 }
-.swiper-demo-5{
+.carousel-demo-5{
   height: 360px;
   background: url("http://design.yonyoucloud.com/static/bee.tinper.org-demo/swiper-demo-5-min.jpg")no-repeat;
   background-size: cover;
