@@ -4,7 +4,7 @@
  * @description 可定制页码
  */
 import React from 'react';
-import ReactSwiper from '../../src';
+import Swiper from '../../src';
 
 class Demo1 extends React.Component {
   render() {
@@ -26,13 +26,13 @@ class Demo1 extends React.Component {
 
     return(
     	<div id="customized-pagination">
-    		<ReactSwiper {...params}>
+    		<Swiper {...params}>
 	        <div className="swiper-demo-1"></div>
 	        <div className="swiper-demo-2"></div>
 	        <div className="swiper-demo-3"></div>
 	        <div className="swiper-demo-4"></div>
 	        <div className="swiper-demo-5"></div>
-      	</ReactSwiper>
+      	</Swiper>
     	</div>
       
     )

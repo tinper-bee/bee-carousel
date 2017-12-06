@@ -1,4 +1,4 @@
 import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 import {expect} from 'chai';
-import ReactSwiper from '../src/index';
+import Swiper from '../src/index';

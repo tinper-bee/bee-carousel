@@ -6,7 +6,7 @@
  *
  */
 import React from 'react';
-import ReactSwiper from '../../src';
+import Swiper from '../../src';
 
 class Demo3 extends React.Component {
   render() {
@@ -23,13 +23,13 @@ class Demo3 extends React.Component {
 
     return(
         <div className="swiper-demo-three">
-            <ReactSwiper {...params}>
+            <Swiper {...params}>
                 <div className="swiper-demo-1"></div>
                 <div className="swiper-demo-2"></div>
                 <div className="swiper-demo-3"></div>
                 <div className="swiper-demo-4"></div>
                 <div className="swiper-demo-5"></div>
-            </ReactSwiper>
+            </Swiper>
         </div>
     )
   }

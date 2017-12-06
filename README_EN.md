@@ -1,16 +1,16 @@
-# bee-react-swiper
+# bee-swiper
 
-[![npm version](https://img.shields.io/npm/v/bee-react-swiper.svg)](https://www.npmjs.com/package/bee-react-swiper)
-[![Build Status](https://img.shields.io/travis/tinper-bee/bee-react-swiper/master.svg)](https://travis-ci.org/tinper-bee/bee-react-swiper)
-[![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-react-swiper/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-react-swiper?branch=master)
-[![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-react-swiper.svg)](https://david-dm.org/tinper-bee/bee-react-swiper#info=devDependencies)
-[![NPM downloads](http://img.shields.io/npm/dm/bee-react-swiper.svg?style=flat)](https://npmjs.org/package/bee-react-swiper)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/tinper-bee/bee-react-swiper.svg)](http://isitmaintained.com/project/tinper-bee/bee-react-swiper "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/tinper-bee/bee-react-swiper.svg)](http://isitmaintained.com/project/tinper-bee/bee-react-swiper "Percentage of issues still open")
+[![npm version](https://img.shields.io/npm/v/bee-swiper.svg)](https://www.npmjs.com/package/bee-swiper)
+[![Build Status](https://img.shields.io/travis/tinper-bee/bee-swiper/master.svg)](https://travis-ci.org/tinper-bee/bee-swiper)
+[![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-swiper/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-swiper?branch=master)
+[![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-swiper.svg)](https://david-dm.org/tinper-bee/bee-swiper#info=devDependencies)
+[![NPM downloads](http://img.shields.io/npm/dm/bee-swiper.svg?style=flat)](https://npmjs.org/package/bee-swiper)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/tinper-bee/bee-swiper.svg)](http://isitmaintained.com/project/tinper-bee/bee-swiper "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/tinper-bee/bee-swiper.svg)](http://isitmaintained.com/project/tinper-bee/bee-swiper "Percentage of issues still open")
 
 
 
-react bee-react-swiper component for tinper-bee
+react bee-swiper component for tinper-bee
 
 ## Rely
 
@@ -36,8 +36,8 @@ react bee-react-swiper component for tinper-bee
 
 ```sh
 $ npm install -g bee-tools
-$ git clone https://github.com/tinper-bee/bee-react-swiper
-$ cd bee-react-swiper
+$ git clone https://github.com/tinper-bee/bee-swiper
+$ cd bee-swiper
 $ npm install
 $ npm run dev
 ```

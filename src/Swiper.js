@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Swiper from 'swiper/dist/js/swiper.js';
+import DepSwiper from 'swiper/dist/js/swiper.js';
 
 import PropTypes from 'prop-types';
 
@@ -335,7 +335,7 @@ const propTypes = {
     })
 }
 
-class ReactSwiper extends React.Component {
+class Swiper extends React.Component {
 
   constructor(props) {
     super(props);
@@ -343,7 +343,7 @@ class ReactSwiper extends React.Component {
   }
 
   componentDidMount() {
-    this.swiper = new Swiper(ReactDOM.findDOMNode(this), {...this.props});
+    this.swiper = new DepSwiper(ReactDOM.findDOMNode(this), {...this.props});
   }
 
   componentWillReceiveProps(nextProps) {
@@ -360,7 +360,7 @@ class ReactSwiper extends React.Component {
   componentDidUpdate() {
     if (this.props.rebuildOnUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.destroy(true, true);
-      this.swiper = new Swiper(ReactDOM.findDOMNode(this), {...this.props});
+      this.swiper = new DepSwiper(ReactDOM.findDOMNode(this), {...this.props});
     } else if (this.props.shouldSwiperUpdate && typeof this.swiper !== 'undefined') {
       this.swiper.update();
 
@@ -470,8 +470,8 @@ class ReactSwiper extends React.Component {
   }
 }
 
-ReactSwiper.defaultProps = defaultProps;
+Swiper.defaultProps = defaultProps;
 
-ReactSwiper.propTypes = propTypes;
+Swiper.propTypes = propTypes;
 
-export default ReactSwiper;
+export default Swiper;

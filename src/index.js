@@ -1,2 +1,2 @@
-import ReactSwiper from './ReactSwiper';
-export default ReactSwiper;
+import Swiper from './Swiper';
+export default Swiper;
