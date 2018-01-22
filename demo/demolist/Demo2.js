@@ -5,7 +5,7 @@
  *
  */
 import React from 'react';
-import Carousel from '../../src';
+import Carousel from '../../src/index';
 
 class Demo2 extends React.Component {
   render() {

@@ -5,7 +5,7 @@
  * @description 根据滑动的力度，定位轮播当前active的进度
  */
 import React from 'react';
-import Carousel from '../../src';
+import Carousel from '../../src/index';
 
 class Demo5 extends React.Component {
   render() {
