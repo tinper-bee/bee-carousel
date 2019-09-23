@@ -41,6 +41,7 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
+    "omit.js": "^1.0.2",
     "swiper": "^4.0.6",
     "tinper-bee-core": "latest"
   },
